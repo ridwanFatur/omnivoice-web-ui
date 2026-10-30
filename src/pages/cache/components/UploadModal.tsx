@@ -17,7 +17,6 @@ export default function UploadModal() {
     uploadFiles,
   } = useCachePageContext();
 
-  // Ref untuk melacak apakah mousedown dimulai di backdrop
   const backdropMouseDown = useRef(false);
 
   if (!uploadOpen) return null;
@@ -26,11 +25,9 @@ export default function UploadModal() {
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm"
       onMouseDown={(event) => {
-        // Tandai true hanya jika klik persis di area backdrop (bukan di dalam modal card)
         backdropMouseDown.current = event.target === event.currentTarget;
       }}
       onClick={(event) => {
-        // Hanya tutup jika mousedown DAN mouseup sama-sama di backdrop, serta tidak sedang uploading
         if (
           backdropMouseDown.current &&
           event.target === event.currentTarget &&

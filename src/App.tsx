@@ -6,7 +6,6 @@ import OnnxPage from "./pages/onnx/OnnxPage"
 import GeneratePage from "./pages/generate/GeneratePage"
 import DebugPage from "./pages/debug/DebugPage"
 
-// Cek apakah mode debug aktif melalui environment variable
 const isDebugMode = import.meta.env.VITE_SHOW_DEBUG === "true"
 
 const NAV_ITEMS = [
@@ -30,7 +29,6 @@ const NAV_ITEMS = [
     label: "Generate Audio",
     icon: AudioLines,
   },
-  // Tambahkan menu debug secara dinamis jika mode debug aktif
   ...(isDebugMode
     ? [
       {
@@ -80,7 +78,6 @@ export default function App() {
             <Route path="/onnx" element={<OnnxPage />} />
             <Route path="/generate" element={<GeneratePage />} />
 
-            {/* Rute debug hanya dirender jika isDebugMode bernilai true */}
             {isDebugMode && <Route path="/debug" element={<DebugPage />} />}
           </Routes>
         </main>

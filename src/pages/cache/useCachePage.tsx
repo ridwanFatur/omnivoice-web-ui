@@ -30,14 +30,13 @@ export default function useCachePage() {
           const cache = await caches.open(name);
           const requests = await cache.keys();
 
-          // Langsung map tanpa membaca response/arrayBuffer()
           const entries: CacheEntry[] = requests.map((request): CacheEntry => {
             return {
               url: request.url,
               method: request.method,
-              status: 0, // Status tidak bisa diketahui tanpa match/response, set default 0 atau abaikan
-              contentType: "Unknown", // Content-type juga butuh response
-              size: null, // Size dikosongkan agar instant, atau bisa dihitung nanti saat entry dipilih saja
+              status: 0,
+              contentType: "Unknown",
+              size: null,
             };
           });
 

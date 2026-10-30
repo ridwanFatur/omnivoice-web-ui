@@ -16,7 +16,6 @@ export default function EntryList() {
 
   const [copied, setCopied] = useState(false);
 
-  // Fungsi untuk menyalin nama bucket dan semua entry
   const handleCopyConfig = () => {
     if (!currentBucket) return;
 
@@ -28,7 +27,7 @@ export default function EntryList() {
 
     navigator.clipboard.writeText(JSON.stringify(configData, null, 2)).then(() => {
       setCopied(true);
-      setTimeout(() => setCopied(false), 2000); // Reset teks "Copied!" setelah 2 detik
+      setTimeout(() => setCopied(false), 2000);
     });
   };
 
@@ -44,7 +43,6 @@ export default function EntryList() {
           </div>
 
           <div className="flex items-center gap-2">
-            {/* Tombol Copy Config */}
             <button
               onClick={handleCopyConfig}
               disabled={!currentBucket}
@@ -108,8 +106,8 @@ export default function EntryList() {
                       </span>
                       <span
                         className={`rounded-md px-2 py-1 ${entry.status >= 200 && entry.status < 300
-                            ? "bg-emerald-500/10 text-emerald-400"
-                            : "bg-slate-700/50 text-slate-400"
+                          ? "bg-emerald-500/10 text-emerald-400"
+                          : "bg-slate-700/50 text-slate-400"
                           }`}
                       >
                         HTTP {entry.status || "Unknown"}

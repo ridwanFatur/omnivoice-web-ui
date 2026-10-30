@@ -62,7 +62,6 @@ function _OnnxPage() {
           </div>
         )}
 
-        {/* Model Selector Dropdown */}
         <div className="mb-6">
           <label className="block text-sm font-medium text-slate-300 mb-2">
             Select ONNX Model Configuration

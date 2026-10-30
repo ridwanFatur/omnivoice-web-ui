@@ -85,7 +85,7 @@ export default function useOnnxPage() {
         ? currentConfig.inputs
         : session.inputNames.map((name, idx) => ({
           name,
-          shape: idx === 0 ? [1, 240, 1024] : [1, 1, 240, 240], // fallback default shape
+          shape: idx === 0 ? [1, 240, 1024] : [1, 1, 240, 240],
           type: 'float32' as const
         }))
 
