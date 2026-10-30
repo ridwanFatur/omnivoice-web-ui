@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cache-bg-main: #050B1B;
+  --color-cache-bg-card: #0A142B;
+  --color-cache-bg-hover: #101D39;
+
+  --color-cache-cyan-base: #22d3ee;
+  /* cyan-400 */
+  --color-cache-blue-base: #2563eb;
+  /* blue-600 */
+}
